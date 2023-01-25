@@ -100,6 +100,9 @@ body main .welcome .wrapper .welcome-text p {
   text-align: left;
   margin: 0;
 }
+body main .welcome .wrapper .welcome-text button :hover {
+  background-color: #E06733;
+}
 body main .welcome .wrapper .welcome-text .learn-more {
   height: 44px;
   width: 158px;
@@ -107,9 +110,7 @@ body main .welcome .wrapper .welcome-text .learn-more {
   border-radius: 10px;
   background-color: transparent;
   margin-top: 6px;
-}
-body main .welcome .wrapper .welcome-text .learn-more :hover {
-  color: #E06733;
+  cursor: pointer;
 }
 body main .about {
   background: #fff;
@@ -190,6 +191,7 @@ body main .service .wrapper .service-content .service_btns {
   justify-content: space-between;
   max-width: 559px;
   width: 100%;
+  margin-top: 29px;
 }
 body main .service .wrapper .service-content .service_btns .servise-btn {
   height: 50px;
@@ -198,6 +200,7 @@ body main .service .wrapper .service-content .service_btns .servise-btn {
   background-color: transparent;
   color: #E06733;
   border: 1px solid #E06733;
+  cursor: pointer;
 }
 body main .service .wrapper .servisces {
   margin-top: 35px;
@@ -323,6 +326,7 @@ body main .price .wrapper .call-us .cta {
   width: 162px;
   border-radius: 5px;
   background-color: transparent;
+  cursor: pointer;
 }
 body main .price .wrapper .call-us img {
   margin-top: 1px;
