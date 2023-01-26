@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 body header {
   background: #EDF2EC;
@@ -8,13 +9,38 @@ body header {
   display: flex;
   justify-content: center;
 }
+@media screen and (max-width: 992px) {
+  body header {
+    height: 117px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body header {
+    height: 96px;
+  }
+}
 body header .wrapper {
   max-width: 1222px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 110px;
+  padding-inline: 109px;
+}
+@media screen and (max-width: 992px) {
+  body header .wrapper {
+    padding-inline: 50px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body header .wrapper {
+    padding-inline: 25px;
+  }
+}
+body header .wrapper .logo {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
 }
 body header .wrapper .logo img .logo_vector {
   width: 20px;
@@ -28,23 +54,120 @@ body header .wrapper .logo .log_text {
   letter-spacing: 0em;
   text-align: left;
   margin: 0;
+  margin-right: 30px;
 }
-body header .wrapper nav {
+@media screen and (min-width: 800px) {
+  body header .wrapper .navigation {
+    display: none;
+  }
+}
+body header .wrapper .navigation #menuToggle {
+  display: block;
+  position: relative;
+  top: 0px;
+  left: 5px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+body header .wrapper .navigation #menuToggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+body header .wrapper .navigation #menuToggle a:hover {
+  color: tomato;
+}
+body header .wrapper .navigation #menuToggle input {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+body header .wrapper .navigation #menuToggle span {
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin-bottom: 6px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+body header .wrapper .navigation #menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+body header .wrapper .navigation #menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(10px, 0px);
+  background: #232323;
+}
+body header .wrapper .navigation #menuToggle input:checked ~ span:nth-last-child(1) {
+  transform: rotate(-45deg) translate(2px, 2px);
+}
+body header .wrapper .navigation #menuToggle input:checked ~ span:nth-last-child(4) {
+  transform: rotate(45deg) translate(10px, 0px);
+}
+body header .wrapper .navigation #menuToggle input:checked ~ span:nth-last-child(2) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+body header .wrapper .navigation #menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+body header .wrapper .navigation #menu {
+  position: relative;
+  width: 300px;
+  margin: -100px 0 0 50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(200%, 0);
+  transition: transform 0.9s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+body header .wrapper .navigation #menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+body header .wrapper .navigation #menuToggle input:checked ~ ul {
+  transform: none;
+}
+body header .wrapper .navbar {
   max-width: 452px;
   width: 100%;
+  margin-left: 30px;
 }
-body header .wrapper nav ul {
+@media screen and (max-width: 799px) {
+  body header .wrapper .navbar {
+    display: none;
+  }
+}
+body header .wrapper .navbar ul {
   display: flex;
   justify-content: space-between;
   padding: 0;
   margin: 0;
 }
-body header .wrapper nav ul li {
+body header .wrapper .navbar ul li {
   list-style-type: none;
 }
-body header .wrapper nav ul li a {
+body header .wrapper .navbar ul li a {
   text-decoration: none;
-  font-family: Inika;
+  font-family: "Inika", serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 50px;
@@ -52,7 +175,12 @@ body header .wrapper nav ul li a {
   text-align: left;
   color: #010201;
 }
-body header .wrapper nav ul li .active_tag {
+@media screen and (max-width: 992px) {
+  body header .wrapper .navbar ul li a {
+    line-height: 50px;
+  }
+}
+body header .wrapper .navbar ul li .active_tag {
   color: #E06733;
 }
 body main .welcome {
@@ -61,6 +189,16 @@ body main .welcome {
   display: flex;
   justify-content: center;
 }
+@media screen and (max-width: 1175px) {
+  body main .welcome {
+    height: 420px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .welcome {
+    height: 300px;
+  }
+}
 body main .welcome .wrapper {
   display: flex;
   padding: 62px 109px;
@@ -68,9 +206,32 @@ body main .welcome .wrapper {
   width: 100%;
   justify-content: space-between;
 }
+@media screen and (max-width: 1175px) {
+  body main .welcome .wrapper {
+    flex-direction: row-reverse;
+    padding: 40px 70px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .welcome .wrapper {
+    padding: 24px 25px;
+    justify-content: center;
+  }
+}
 body main .welcome .wrapper img {
   height: 407.3581542969px;
   width: 448.7954406738px;
+}
+@media screen and (max-width: 1175px) {
+  body main .welcome .wrapper img {
+    height: 254.1476135254px;
+    width: 280px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .welcome .wrapper img {
+    display: none;
+  }
 }
 body main .welcome .wrapper .welcome-text {
   display: flex;
@@ -78,6 +239,20 @@ body main .welcome .wrapper .welcome-text {
   max-width: 549px;
   max-height: 340px;
   gap: 42px;
+}
+@media screen and (max-width: 1175px) {
+  body main .welcome .wrapper .welcome-text {
+    max-width: 346px;
+    max-height: 310px;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .welcome .wrapper .welcome-text {
+    max-width: 600px;
+    max-height: 252px;
+    gap: 20px;
+  }
 }
 body main .welcome .wrapper .welcome-text h1 {
   font-family: "Inter", sans-serif;
@@ -87,6 +262,17 @@ body main .welcome .wrapper .welcome-text h1 {
   letter-spacing: 0em;
   text-align: left;
   margin: 0;
+}
+@media screen and (max-width: 1175px) {
+  body main .welcome .wrapper .welcome-text h1 {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .welcome .wrapper .welcome-text h1 {
+    font-size: 25px;
+    line-height: 35px;
+  }
 }
 body main .welcome .wrapper .welcome-text h1 span {
   color: #499A18;
@@ -100,8 +286,11 @@ body main .welcome .wrapper .welcome-text p {
   text-align: left;
   margin: 0;
 }
-body main .welcome .wrapper .welcome-text button :hover {
-  background-color: #E06733;
+@media screen and (max-width: 1175px) {
+  body main .welcome .wrapper .welcome-text p {
+    font-size: 16px;
+    line-height: 25px;
+  }
 }
 body main .welcome .wrapper .welcome-text .learn-more {
   height: 44px;
@@ -112,11 +301,25 @@ body main .welcome .wrapper .welcome-text .learn-more {
   margin-top: 6px;
   cursor: pointer;
 }
+body main .welcome .wrapper .welcome-text button:hover {
+  background-color: #E06733;
+  color: #fff;
+}
 body main .about {
   background: #fff;
   height: 666px;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 1175px) {
+  body main .about {
+    height: 783px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .about {
+    height: 516px;
+  }
 }
 body main .about .wrapper {
   display: flex;
@@ -125,12 +328,47 @@ body main .about .wrapper {
   width: 100%;
   justify-content: space-between;
 }
+@media screen and (max-width: 1175px) {
+  body main .about .wrapper {
+    flex-direction: column;
+    padding: 40px 50px;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .about .wrapper {
+    padding: 30px 25px;
+    height: 516px;
+    justify-content: start;
+  }
+}
 body main .about .wrapper .about-text {
   display: flex;
   flex-direction: column;
   max-width: 605px;
   max-height: 350px;
   gap: 40px;
+}
+@media screen and (max-width: 1175px) {
+  body main .about .wrapper .about-text {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .about .wrapper .about-text {
+    width: 100%;
+    height: 516px;
+    gap: 21px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 body main .about .wrapper .about-text h2 {
   padding-top: 68px;
@@ -144,6 +382,24 @@ body main .about .wrapper .about-text h2 {
   color: #499A18;
   margin: 0;
 }
+@media screen and (max-width: 1175px) {
+  body main .about .wrapper .about-text h2 {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 46px;
+    text-align: center;
+    padding-top: 0px;
+    max-width: 463px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .about .wrapper .about-text h2 {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 33px;
+    text-align: center;
+  }
+}
 body main .about .wrapper .about-text h2 span {
   color: #E06733;
 }
@@ -155,6 +411,29 @@ body main .about .wrapper .about-text p {
   letter-spacing: 0em;
   text-align: left;
   margin: 0;
+}
+@media screen and (max-width: 1175px) {
+  body main .about .wrapper .about-text p {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .about .wrapper .about-text p {
+    max-width: 800px;
+  }
+}
+@media screen and (max-width: 1175px) {
+  body main .about .wrapper img {
+    height: 258px;
+    width: 250px;
+  }
+}
+@media screen and (max-width: 799px) {
+  body main .about .wrapper img {
+    height: 147px;
+    width: 150px;
+  }
 }
 body main .service {
   background: #EDF2EC;
@@ -201,6 +480,10 @@ body main .service .wrapper .service-content .service_btns .servise-btn {
   color: #E06733;
   border: 1px solid #E06733;
   cursor: pointer;
+}
+body main .service .wrapper .service-content .service_btns button:hover {
+  background-color: #E06733;
+  color: #fff;
 }
 body main .service .wrapper .servisces {
   margin-top: 35px;
@@ -325,8 +608,13 @@ body main .price .wrapper .call-us .cta {
   height: 50px;
   width: 162px;
   border-radius: 5px;
+  color: #E06733;
   background-color: transparent;
   cursor: pointer;
+}
+body main .price .wrapper .call-us button:hover {
+  background-color: #E06733;
+  color: #fff;
 }
 body main .price .wrapper .call-us img {
   margin-top: 1px;
