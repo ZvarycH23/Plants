@@ -652,9 +652,6 @@ body main .contacts .wrapper .contact_us .contacts_city {
   top: 148px;
   border-radius: 0px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 20px;
   margin-left: 372px;
   margin-top: 37px;
 }
